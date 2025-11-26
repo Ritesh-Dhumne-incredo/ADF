@@ -1,0 +1,44 @@
+{
+	"name": "Executepipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "childpipeline",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"filename": {
+							"value": "@pipeline().parameters.masterFile",
+							"type": "Expression"
+						},
+						"outputfilename": {
+							"value": "@pipeline().parameters.masteroutputfile",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"masterFile": {
+				"type": "string"
+			},
+			"masteroutputfile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-11-23T14:55:09Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

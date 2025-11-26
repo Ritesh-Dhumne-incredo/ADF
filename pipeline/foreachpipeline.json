@@ -1,0 +1,58 @@
+{
+	"name": "foreachpipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('status')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@not(contains(variables('status'),'complete'))",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Fail1",
+										"type": "Fail",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"message": "pipelinefailed Hritik work again",
+											"errorCode": "504"
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"status": {
+				"type": "Array",
+				"defaultValue": [
+					"complete",
+					"cancel",
+					"pending"
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-11-20T13:28:21Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

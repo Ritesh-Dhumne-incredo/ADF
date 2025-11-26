@@ -1,0 +1,17 @@
+{
+	"name": "sqldatabaseLookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSsql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "empsalary"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

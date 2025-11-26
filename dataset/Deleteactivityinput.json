@@ -1,0 +1,19 @@
+{
+	"name": "Deleteactivityinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "files",
+				"fileSystem": "deleteacitivity"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

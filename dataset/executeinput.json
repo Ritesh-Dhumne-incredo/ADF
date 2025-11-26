@@ -1,0 +1,33 @@
+{
+	"name": "executeinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSstorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"inputfile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().inputfile",
+					"type": "Expression"
+				},
+				"folderPath": "inputfile",
+				"fileSystem": "executepipeline"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
