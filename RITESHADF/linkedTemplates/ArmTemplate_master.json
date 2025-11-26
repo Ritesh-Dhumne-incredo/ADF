@@ -1,0 +1,186 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "RITESHADF"
+		},
+		"LS_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL'"
+		},
+		"LSsql_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LSsql'"
+		},
+		"LSstorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LSstorage'"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "riteshsqlserver.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "riteshsqldb"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "riteshdmin"
+		},
+		"LSsql_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "riteshqlserver.database.windows.net"
+		},
+		"LSsql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SQLdatabase"
+		},
+		"LSsql_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "rameshdhumne89@gmail.com"
+		},
+		"LSstorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://riteshstorageaf23.dfs.core.windows.net/"
+		},
+		"RestLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"linkedGit_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "RITESHADF_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_SQL_password": {
+						"value": "[parameters('LS_SQL_password')]"
+					},
+					"LSsql_password": {
+						"value": "[parameters('LSsql_password')]"
+					},
+					"LSstorage_accountKey": {
+						"value": "[parameters('LSstorage_accountKey')]"
+					},
+					"LS_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_server')]"
+					},
+					"LS_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_database')]"
+					},
+					"LS_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
+					},
+					"LSsql_properties_typeProperties_server": {
+						"value": "[parameters('LSsql_properties_typeProperties_server')]"
+					},
+					"LSsql_properties_typeProperties_database": {
+						"value": "[parameters('LSsql_properties_typeProperties_database')]"
+					},
+					"LSsql_properties_typeProperties_userName": {
+						"value": "[parameters('LSsql_properties_typeProperties_userName')]"
+					},
+					"LSstorage_properties_typeProperties_url": {
+						"value": "[parameters('LSstorage_properties_typeProperties_url')]"
+					},
+					"RestLS_properties_typeProperties_url": {
+						"value": "[parameters('RestLS_properties_typeProperties_url')]"
+					},
+					"linkedGit_properties_typeProperties_url": {
+						"value": "[parameters('linkedGit_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "RITESHADF_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'RITESHADF_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "RITESHADF_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'RITESHADF_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "RITESHADF_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'RITESHADF_ArmTemplate_2')]"
+			]
+		}
+	]
+}

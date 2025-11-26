@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "RITESHADF"
+		},
+		"LS_SQL_password": {
+			"value": ""
+		},
+		"LSsql_password": {
+			"value": ""
+		},
+		"LSstorage_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "riteshsqlserver.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "riteshsqldb"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "riteshdmin"
+		},
+		"LSsql_properties_typeProperties_server": {
+			"value": "riteshqlserver.database.windows.net"
+		},
+		"LSsql_properties_typeProperties_database": {
+			"value": "SQLdatabase"
+		},
+		"LSsql_properties_typeProperties_userName": {
+			"value": "rameshdhumne89@gmail.com"
+		},
+		"LSstorage_properties_typeProperties_url": {
+			"value": "https://riteshstorageaf23.dfs.core.windows.net/"
+		},
+		"RestLS_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"linkedGit_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
