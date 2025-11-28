@@ -1,0 +1,21 @@
+{
+	"name": "Onprem_DSGetmetadata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_onpremfile",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
