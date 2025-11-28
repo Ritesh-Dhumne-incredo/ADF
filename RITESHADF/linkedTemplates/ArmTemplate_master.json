@@ -11,6 +11,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SQL'"
 		},
+		"LS_onprem_to_sink__accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_onprem_to_sink_'"
+		},
+		"LS_onpremfile_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_onpremfile'"
+		},
 		"LSsql_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LSsql'"
@@ -30,6 +38,18 @@
 		"LS_SQL_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "riteshdmin"
+		},
+		"LS_onprem_to_sink__properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://riteshstorageaf23.dfs.core.windows.net/"
+		},
+		"LS_onpremfile_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\ADF_Files"
+		},
+		"LS_onpremfile_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "riteshdhumne89@gmail.com"
 		},
 		"LSsql_properties_typeProperties_server": {
 			"type": "string",
@@ -85,6 +105,9 @@
 					"LS_SQL_password": {
 						"value": "[parameters('LS_SQL_password')]"
 					},
+					"LS_onprem_to_sink__accountKey": {
+						"value": "[parameters('LS_onprem_to_sink__accountKey')]"
+					},
 					"LSsql_password": {
 						"value": "[parameters('LSsql_password')]"
 					},
@@ -99,6 +122,9 @@
 					},
 					"LS_SQL_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
+					},
+					"LS_onprem_to_sink__properties_typeProperties_url": {
+						"value": "[parameters('LS_onprem_to_sink__properties_typeProperties_url')]"
 					},
 					"LSsql_properties_typeProperties_server": {
 						"value": "[parameters('LSsql_properties_typeProperties_server')]"
@@ -155,6 +181,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_onpremfile_password": {
+						"value": "[parameters('LS_onpremfile_password')]"
+					},
+					"LS_onpremfile_properties_typeProperties_host": {
+						"value": "[parameters('LS_onpremfile_properties_typeProperties_host')]"
+					},
+					"LS_onpremfile_properties_typeProperties_userId": {
+						"value": "[parameters('LS_onpremfile_properties_typeProperties_userId')]"
 					}
 				}
 			},

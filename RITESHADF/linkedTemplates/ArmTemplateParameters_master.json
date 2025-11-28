@@ -8,6 +8,12 @@
 		"LS_SQL_password": {
 			"value": ""
 		},
+		"LS_onprem_to_sink__accountKey": {
+			"value": ""
+		},
+		"LS_onpremfile_password": {
+			"value": ""
+		},
 		"LSsql_password": {
 			"value": ""
 		},
@@ -22,6 +28,15 @@
 		},
 		"LS_SQL_properties_typeProperties_userName": {
 			"value": "riteshdmin"
+		},
+		"LS_onprem_to_sink__properties_typeProperties_url": {
+			"value": "https://riteshstorageaf23.dfs.core.windows.net/"
+		},
+		"LS_onpremfile_properties_typeProperties_host": {
+			"value": "C:\\ADF_Files"
+		},
+		"LS_onpremfile_properties_typeProperties_userId": {
+			"value": "riteshdhumne89@gmail.com"
 		},
 		"LSsql_properties_typeProperties_server": {
 			"value": "riteshqlserver.database.windows.net"
